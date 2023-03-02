@@ -1,0 +1,21 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: my-web1-deployment
+  labels:
+    app: my-k8s1-application
+spec:
+  selector:
+    replicas: 2
+    matchLabels:
+      project:  kgb
+  template:
+    metadata:
+      labels:
+        project:  kgb
+    spec:
+      containers:
+        - name: kgb1-web
+          image: vadimus3000/k8sphp:latest
+          ports:
+            - containerPort: 80

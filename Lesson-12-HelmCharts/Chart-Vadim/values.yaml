@@ -1,0 +1,4 @@
+container:
+  image: vadimus3000/k8sphp:latest
+
+replicaCount: 2
